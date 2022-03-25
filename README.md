@@ -20,7 +20,7 @@ docker login <docker-registry> -u <username>
 docker push <docker-registry>/jenkins-docker:lts
 ```
 
-How to start the Jenkins-Docker container:
+How to start the Jenkins-Docker container with access to the Docker running on host:
 ```bash
 # for MacOS host
 mkdir -p /Users/marcus/jenkins_home

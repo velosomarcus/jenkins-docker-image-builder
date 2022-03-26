@@ -8,7 +8,7 @@ RUN mkdir -p /tmp/download && \
  rm -rf /tmp/download && \
 # works with Ubuntu as host
 #  groupadd -g 999 docker && usermod -aG staff,docker jenkins
-# works with MacOS as host
+# works with macOS as host
  usermod -aG daemon jenkins && touch /var/run/docker.sock && chown root:daemon /var/run/docker.sock && chmod g+w /var/run/docker.sock
 
 # setting passwords (optional)

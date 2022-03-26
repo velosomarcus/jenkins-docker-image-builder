@@ -22,13 +22,13 @@ docker push <docker-registry>/jenkins-docker:lts
 
 How to start the Jenkins-Docker container with access to the Docker running on host:
 ```bash
-# for MacOS host
+# for MacOS as host
 mkdir -p /Users/marcus/jenkins_home
 docker run --name jenkins-docker -d -v /Users/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/bin/docker -p 8080:8080 -p 50000:50000 jenkins-docker:lts
 ```
 
 ```bash
-# for Ubuntu host
+# for Ubuntu as host
 mkdir -p /home/marcus/jenkins_home
 docker run --name jenkins-docker -d -v /home/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/bin/docker -p 8080:8080 -p 50000:50000 jenkins-docker:lts
 ```

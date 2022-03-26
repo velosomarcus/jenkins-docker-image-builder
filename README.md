@@ -4,7 +4,7 @@ How to create a Jenkins image with the docker client installed.
 ## Instructions
 
 To build the docker image you need to configure the Dockerfile for the
-host where you will run the image (Ubuntu or macOS) by changing lines
+host where you will run the container (Ubuntu or macOS) by changing lines
 9~12 in this file. After that, run the commands below.
 ```bash
 cd <path-to-jenkins-docker-git-clone-folder>

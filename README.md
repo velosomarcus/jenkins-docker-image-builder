@@ -24,11 +24,11 @@ How to start the Jenkins-Docker container with access to the Docker running on h
 ```bash
 # for MacOS as host
 mkdir -p /Users/marcus/jenkins_home
-docker run --name jenkins-docker -d -v /Users/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/bin/docker -p 8080:8080 -p 50000:50000 jenkins-docker:lts
+docker run --name jenkins-docker -d -v /Users/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jenkins-docker:lts
 ```
 
 ```bash
 # for Ubuntu as host
 mkdir -p /home/marcus/jenkins_home
-docker run --name jenkins-docker -d -v /home/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/usr/bin/docker -p 8080:8080 -p 50000:50000 jenkins-docker:lts
+docker run --name jenkins-docker -d -v /home/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jenkins-docker:lts
 ```

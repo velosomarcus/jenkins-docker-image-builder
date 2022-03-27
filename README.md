@@ -31,6 +31,6 @@ docker run --name jenkins-docker -d -v /Users/marcus/jenkins_home/:/var/jenkins_
 
 ```bash
 # for Ubuntu as host
-mkdir -p /home/marcus/jenkins_home
-docker run --name jenkins-docker -d -v /home/marcus/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jenkins-docker:lts
+mkdir -p /home/ubuntu/jenkins_home
+docker run --name jenkins-docker -d -v /home/ubuntu/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jenkins-docker:lts
 ```

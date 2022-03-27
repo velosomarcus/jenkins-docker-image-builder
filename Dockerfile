@@ -8,9 +8,9 @@ RUN mkdir -p /tmp/download && \
  rm -rf /tmp/download && \
 # works with Ubuntu as host
 # we can get the docker group id by running this command on the host machine: getent group docker
-# groupadd -g 1001 docker && usermod -aG staff,docker jenkins
+ groupadd -g 1001 docker && usermod -aG staff,docker jenkins
 # works with macOS as host
- usermod -aG daemon jenkins && touch /var/run/docker.sock && chown root:daemon /var/run/docker.sock && chmod g+w /var/run/docker.sock
+# usermod -aG daemon jenkins && touch /var/run/docker.sock && chown root:daemon /var/run/docker.sock && chmod g+w /var/run/docker.sock
 
 # setting passwords (optional)
 #RUN echo jenkins:jenkins | chpasswd

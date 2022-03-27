@@ -10,6 +10,7 @@ RUN mkdir -p /tmp/download && \
 # we can get the docker group id by running this command on the host machine: getent group docker
  groupadd -g 1001 docker && usermod -aG staff,docker jenkins
 # works with macOS as host
+# on macOS the docker socket file is associated with the daemon group
 # usermod -aG daemon jenkins && touch /var/run/docker.sock && chown root:daemon /var/run/docker.sock && chmod g+w /var/run/docker.sock
 
 # setting passwords (optional)

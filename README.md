@@ -34,3 +34,17 @@ docker run --name jenkins-docker -d -v /Users/marcus/jenkins_home/:/var/jenkins_
 mkdir -p /home/ubuntu/jenkins_home
 docker run --name jenkins-docker -d -v /home/ubuntu/jenkins_home/:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jenkins-docker:lts
 ```
+
+How to Test:
+
+Wait until the jenkins-docker container is running and then execute the 
+command below on your host machine (Ubuntu or macOS) to connect to the container: 
+```bash
+docker exec -it jenkins-docker bash
+```
+
+Then run the command below inside the container:
+```bash
+docker version
+```
+If you can see the Client and Server versions, then you are good to go.

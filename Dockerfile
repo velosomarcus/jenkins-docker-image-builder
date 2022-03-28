@@ -6,12 +6,15 @@ RUN mkdir -p /tmp/download && \
  rm -rf /tmp/download/docker/dockerd && \
  mv /tmp/download/docker/docker* /usr/local/bin/ && \
  rm -rf /tmp/download && \
-# works with Ubuntu as host
-# we can get the docker group id by running this command on the host machine: getent group docker
+## When using Ubuntu as a host machine, make sure you get the correct docker group ID on your host
+## we can get that ID (1001?) by running this command on the Ubuntu host machine: getent group docker
+## uncomment line below when building the image to run with Ubuntu as host
  groupadd -g 1001 docker && usermod -aG staff,docker jenkins
-# works with macOS as host
-# on macOS the docker socket file is associated with the daemon group
+## When using macOS as a host machine, the docker socket file is associated with the daemon group and we don't need the docker group ID.
+## uncomment line below when building the image to run with macOS as host
 # usermod -aG daemon jenkins && touch /var/run/docker.sock && chown root:daemon /var/run/docker.sock && chmod g+w /var/run/docker.sock
+
+# Attention: Make sure you only have line 12 OR line 15 uncommented. You can't have both or neither lines uncommented.
 
 # setting passwords (optional)
 #RUN echo jenkins:jenkins | chpasswd

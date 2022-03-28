@@ -37,15 +37,16 @@ cd <path-to-jenkins-docker-image-builder-git-clone-folder>
 docker build -t jenkins-docker:lts .
 ```
 
-Command to see the image created:
+[Optional] Command to see the image created:
 
 ```bash
 docker images | grep jenkins-docker
 ```
 
-[Optional] Command to login and push the created image to your Docker Registry:
+[Optional] Commands to login, tag and push the created image to your Docker Registry:
 
 ```bash
+docker tag jenkins-docker:lts <docker-registry>/jenkins-docker:lts
 docker login <docker-registry> -u <username>
 docker push <docker-registry>/jenkins-docker:lts
 ```

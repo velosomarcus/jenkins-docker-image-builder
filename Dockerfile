@@ -1,6 +1,11 @@
 FROM jenkins/jenkins:lts
 USER root
 
+RUN apt update && \
+ apt install sudo -y && \
+ apt install python3 -y && \
+ usermod -aG sudo jenkins && \
+ echo 'jenkins ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN mkdir -p /tmp/download && \
  curl -L https://download.docker.com/linux/static/stable/x86_64/docker-20.10.9.tgz | tar -xz -C /tmp/download && \
  rm -rf /tmp/download/docker/dockerd && \

@@ -34,7 +34,7 @@ After configuring the _Dockerfile_ for you specific host, run the following comm
 
 ```bash
 cd <path-to-jenkins-docker-image-builder-git-clone-folder>
-docker build -t jenkins-docker:lts .
+docker build --no-cache -t jenkins-docker:lts .
 ```
 
 [Optional] Command to see the image created:

@@ -1,5 +1,5 @@
 # Jenkins Docker Image Builder
-How to create a Jenkins image with the docker client installed.
+How to create a [Jenkins](https://www.jenkins.io/) image with the docker client installed.
 
 This image is based on the [jenkins/jenkins:lts](https://hub.docker.com/r/jenkins/jenkins) image,
 provided and maintained by the [Jenkins Community](https://jenkins.io/).
@@ -83,10 +83,43 @@ command below on your host machine (Ubuntu or macOS) to connect to the container
 docker exec -it jenkins-docker bash
 ```
 
-And then run the command below inside the container:
+And then run the command below inside the Jenkins-Docker container:
 
 ```bash
 docker version
 ```
 
 If you can see both the client and server versions, you're all set.
+
+Now we can try to access Jenkins server UI. First, we need to get the login token created
+during the installation process. To gte the token execute the 
+command below on your host machine (Ubuntu or macOS).
+
+```bash
+docker logs jenkins-docker bash
+```
+
+Then we will see the something like this:
+
+```bash
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+<our-token-will-be-here>
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+```
+
+We will use this token to continue the Jenkins installation using a web browser.
+
+- http://<jenkins-host-ip>:8080
+
+Now we can follow the instructions on the [Jenkins Documentation](https://www.jenkins.io/doc/book/installing/docker/) to complete the installation.

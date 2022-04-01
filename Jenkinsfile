@@ -8,7 +8,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v2/', 'dockerhub') {
+     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
        def app = docker.build("marcusveloso/jenkins-docker:${tag}", '.').push()
      }
    }

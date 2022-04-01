@@ -2,10 +2,12 @@ FROM jenkins/jenkins:lts
 USER root
 
 RUN apt update && \
+ apt install procps -y && \
  apt install sudo -y && \
- apt install python3 -y && \
+ apt install python3 python3-pip -y && \
  usermod -aG sudo jenkins && \
  echo 'jenkins ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN python3 -m pip install awscli
 RUN mkdir -p /tmp/download && \
  curl -L https://download.docker.com/linux/static/stable/x86_64/docker-20.10.9.tgz | tar -xz -C /tmp/download && \
  rm -rf /tmp/download/docker/dockerd && \

@@ -5,6 +5,7 @@ RUN apt update && \
  apt install procps -y && \
  apt install sudo -y && \
  apt install python3 python3-pip -y && \
+ apt install ansible -y && \
  usermod -aG sudo jenkins && \
  echo 'jenkins ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN python3 -m pip install awscli

@@ -27,7 +27,7 @@ cd jenkins-docker-image-builder
 ```
 
 Before building your own docker image, you will need to configure the _Dockerfile_ file for the host 
-(Ubuntu or macOS) where you will run the container by commenting and uncommenting specific lines 9~14 
+(Ubuntu or macOS) where you will run the container by commenting and uncommenting specific lines 20 or 23 
 in the file. You can follow the instructions in the _Dockerfile_ itself.
 
 After configuring the _Dockerfile_ for you specific host, run the following commands.
